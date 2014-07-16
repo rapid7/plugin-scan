@@ -1,0 +1,21 @@
+<div class="row header">
+  <div class="span6 no-space">
+    <a href="<%= BASE_URL %>"><h1>pluginscan</h1></a>
+  </div>
+  <div class="span6 right">
+    <br/>
+    <p>
+      <a href="/scanme/" class="btn btn-link">Scan</a> <span class="divider">|</span>
+      <a href="/help#faqs" class="btn btn-link">FAQ</a> <span class="divider">|</span>
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :method =>'delete', :class => "btn btn-link" ) %>
+    <% else %>
+      <%= link_to('Login', new_user_session_path, :class => "btn btn-link") %>
+    <% end %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <hr/>
+</div>

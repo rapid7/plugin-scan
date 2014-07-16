@@ -1,0 +1,82 @@
+<% scan_status_for do |status| %>
+  <% if status.outdated? %>
+    <h3><b id="warning">Your System May be Vulnerable: <%= status.number_of_outdated_versions %> Outdated Plugin(s) Found.</b></h3>
+    <p>You are using outdated software that puts your data at risk. Install the software updates listed below to protect yourself - it's that simple.</p>
+  <% else %>
+    <h3><b id="success">Congratulations! Your Plugins are Updated</b></h3>
+  <% end %>
+
+  <table class="table" id="snapshot-table">
+    <thead>
+      <th>&nbsp;</th>
+      <th>Software</th>
+      <th>Your Version</th>
+      <th colspan="3">Current Release</th>
+    </thead>
+    <tbody>
+      <% status.audited_software do |software| %>
+      <tr>
+        <% if software.show_exploits_and_vulns? %> 
+          <td rowspan="2"><%= raw(software.image_tag) %></td>
+        <% else %>
+          <td><%= raw(software.image_tag) %></td>
+        <% end %>
+        <td><%= software.name %></td>
+        <td><%= software.version %></td>
+        <td><%= software.current_version %></td>
+        <% if software.update_available? %>
+        <td style="vertical-align: middle">
+          <button class="btn btn-danger span3">Update Available</button>
+        </td>
+        <td style="vertical-align: middle">
+          <button class="btn btn-primary span3" onClick="location.href='<%= software.download_url %>'">Download Now</button>
+        </td>
+        <% else %>
+        <td colspan="2" style="vertical-align: middle">
+          <button class="btn btn-success span3">Up to Date</button>
+        </td>
+        <% end %>
+      </tr>
+      <% if software.show_exploits_and_vulns? %>
+      <tr>
+        <td colspan="3">
+          <% if software.exploitable? %>
+            <% if software.metasploit_urls.any? %>
+            Metasploit Exploit Modules:
+            <ul>
+              <% software.metasploit_urls.each do |url| %>
+                <li><%= raw(url) %></li>
+              <% end %>
+            </ul>
+            <% end %>
+
+            <% if software.exploit_db_urls.any? %> 
+            Exploit DB:
+            <ul>
+              <% software.exploit_db_urls.each do |url| %>
+                <li><%= raw(url) %></li>
+              <% end %>
+            </ul> 
+            <% end %>
+          <% else %>
+            <p>No exploits identified</p>
+          <% end %>
+        </td>
+        <td colspan="2">
+          <% if software.vulnerable? %>
+            Vulnerabilities:
+            <ul>
+              <% software.cve_urls.each do |url| %>
+                <li><%= raw(url) %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>No vulnerablilities identified</p>
+          <% end %>
+        </td>
+      </tr> 
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

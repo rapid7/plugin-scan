@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+  <%= render 'layouts/html_head' %>
+  <body>
+    <div class="container">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/navigation' %>
+      <div class="row">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

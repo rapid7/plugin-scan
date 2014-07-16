@@ -1,0 +1,33 @@
+<!-- World Map tab -->
+<div class="tab-pane active" id="map-loaded-world-tab">
+  <p>Overview of hosts detected by <%= product_name %> by country.</p>
+
+
+<%= javascript_tag do %>
+      function drawChartRegionsMap() {
+        var map_data = google.visualization.arrayToDataTable([
+          ['Country', 'Exploitable'],
+          <%= @map_data %>
+        ]);
+
+        var map_options = {
+          width: 700,
+          height: 500,
+        };
+
+        var map_chart = new google.visualization.GeoChart(document.getElementById('map_canvas'));
+
+        map_chart.draw(map_data, map_options);
+    };
+
+<% end %>
+
+    <div id="map_canvas"></div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {;
+    drawChartRegionsMap();
+  });
+<% end %>
+
+</div>

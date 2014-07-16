@@ -1,0 +1,35 @@
+<div class="tab-pane" id="map-tab">
+  <div class="tabbable tabs-left" style="margin-bottom: 18px;">
+    <ul class="nav nav-tabs" id="map-nav-tab">
+      <li class=""><a href="#map-world-tab" data-toggle="tab"><img src="/assets/icon_map_32x32.png" border="0"> World Map</a></li>
+    </ul>
+    <div class="tab-content">
+<!-- World Map Tab -->
+      <div class="tab-pane" id="map-world-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- End of Content -->
+    </div>
+  </div>
+ </div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+
+    $('#map-nav-tab a[data-toggle="tab"]').on('show', function (e) {
+      var target = e.target.getAttribute("href");
+      var target_path = '<%= dashboard_graph_path(@feed[:fid], @duration_ts.to_i, @duration_te.to_i, '' ) %>' + target.substring(1);
+      $(target).load(target_path);
+    });
+
+    $('#map-nav-tab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+
+   // Load the first tab automatically when the top-level nav is switched
+   $('#dashboard-nav-tab a[data-section="map"]').click(function (e) {
+      $('#map-nav-tab a:first').tab('show');
+    })
+  });
+<% end %>

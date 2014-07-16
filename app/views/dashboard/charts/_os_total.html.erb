@@ -1,0 +1,49 @@
+<p>Total count and share of operating systems detected by <%= product_name %>.</p>
+<div class="container span4">
+
+<%= javascript_tag do %>
+
+      function drawChartOS1() {
+        var os_bar_data = google.visualization.arrayToDataTable([
+          ['OS', 'Count'],
+          <%= @os %>
+        ]);
+
+        var os_bar_options = {
+          title: 'Operating System Count',
+          <%= @chart_dimensions %>
+        };
+
+        var os_bar_chart = new google.visualization.BarChart(document.getElementById('os_bar_div'));
+        os_bar_chart.draw(os_bar_data, os_bar_options);
+      }
+
+      function drawChartOS2() {
+        var os_pie_data = google.visualization.arrayToDataTable([
+          ['OS', 'Count'],
+          <%= @os %>
+        ]);
+
+        var os_pie_options = {
+          title: 'Operating Systems Share',
+          <%= @chart_dimensions %>
+        };
+
+        var os_pie_chart = new google.visualization.PieChart(document.getElementById('os_pie_chart'));
+        os_pie_chart.draw(os_pie_data, os_pie_options);
+      }
+
+<% end %>
+
+<div id="os_bar_div"></div>
+<div id="os_pie_chart"></div>
+
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    drawChartOS1();
+    drawChartOS2();
+  });
+<% end %>
+
+</div>

@@ -1,0 +1,97 @@
+<div class="tab-pane active" id="statistics-tab">
+  <div class="tabbable tabs-left" style="margin-bottom: 18px;">
+    <ul class="nav nav-tabs" id="statistics-nav-tab">
+
+      <li class=""><h4>General Statistics</h4></li>
+      <li class=""><a href="#statistics-traffic-tab" data-toggle="tab"><img src="/assets/icon_chart_32x32.png" border="0"> Traffic Analysis </a></li>
+      <li class=""><a href="#statistics-os-tab" data-toggle="tab"><img src="/assets/icon_os_32x32.png" border="0"> Operating Systems</a></li>
+      <li class=""><a href="#statistics-browser-tab" data-toggle="tab"><img src="/assets/icon_browser_32x32.png" border="0"> Web Browsers</a></li>
+      <li class=""><h4>Browser Addons</h4></li>
+      <li class=""><a href="#statistics-java-tab" data-toggle="tab"><img src="/assets/icon_java_32x32.png" border="0"> Oracle Java</a></li>
+      <li class=""><a href="#statistics-flash-tab" data-toggle="tab"><img src="/assets/icon_flash_32x32.png" border="0"> Adobe Flash</a></li>
+      <li class=""><a href="#statistics-reader-tab" data-toggle="tab"><img src="/assets/icon_adobereader_32x32.png" border="0"> Adobe Reader</a></li>
+      <li class=""><a href="#statistics-shock-tab" data-toggle="tab"><img src="/assets/icon_shockwave_32x32.png" border="0"> Adobe Shockwave</a></li>
+      <li class=""><a href="#statistics-qt-tab" data-toggle="tab"><img src="/assets/icon_quicktime_32x32.png" border="0"> Apple Quicktime</a></li>
+      <li class=""><a href="#statistics-rp-tab" data-toggle="tab"><img src="/assets/icon_realplayer_32x32.png" border="0"> RealPlayer</a></li>
+
+      <li class=""><a href="#statistics-silver-tab" data-toggle="tab"><img src="/assets/icon_silverlight_32x32.png" border="0"> Microsoft Silverlight</a></li>
+      <li class=""><a href="#statistics-vlc-tab" data-toggle="tab"><img src="/assets/icon_vlc_32x32.png" border="0"> VLC Media Player</a></li>
+      <li class=""><a href="#statistics-wmp-tab" data-toggle="tab"><img src="/assets/icon_wmp_32x32.png" border="0"> Windows Media Player</a></li>
+      <li class=""><a href="#statistics-dvr-tab" data-toggle="tab"><img src="/assets/icon_devalvr_32x32.png" border="0"> Phoscode DevalVR</a></li>
+    </ul>
+    <div class="tab-content">
+
+<!-- Traffic Tab -->
+	    <div class="tab-pane active" id="statistics-traffic-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Operating Systems Tab -->
+	    <div class="tab-pane" id="statistics-os-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+		  </div>
+<!-- Web Browser Tab -->
+	    <div class="tab-pane" id="statistics-browser-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Adobe Flash Tab -->
+      <div class="tab-pane" id="statistics-flash-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Java Tab -->
+	    <div class="tab-pane" id="statistics-java-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Quicktime Tab -->
+	    <div class="tab-pane" id="statistics-qt-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Adobe Reader Tab -->
+	    <div class="tab-pane" id="statistics-reader-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- RealPlayer Tab -->
+      <div class="tab-pane" id="statistics-rp-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Shockwave Tab -->
+      <div class="tab-pane" id="statistics-shock-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Silverlight Tab -->
+	    <div class="tab-pane" id="statistics-silver-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- VLC Media Player Tab -->
+      <div class="tab-pane" id="statistics-vlc-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- Windows Media Player Tab -->
+      <div class="tab-pane" id="statistics-wmp-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- DevalVR Tab -->
+      <div class="tab-pane" id="statistics-dvr-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- End of Content -->
+    </div>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+
+    $('#statistics-nav-tab a[data-toggle="tab"]').on('show', function (e) {
+      var target = e.target.getAttribute("href");
+      var target_path = '<%= @presenter.graph_prefix_uri %>' + target.substring(1);
+      $(target).load(target_path);
+    });
+
+    $('#statistics-nav-tab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+
+    $('#statistics-nav-tab a:first').tab('show');
+  });
+<% end %>

@@ -1,0 +1,30 @@
+<%= simple_form_for(resource, 
+                    :as => resource_name, 
+                    :url => session_path(resource_name),
+                    :html => { :class => 'form-horizontal well' }) do |f| %>
+  <fieldset>
+    <legend>Login</legend>
+    <% if flash[:alert] %>
+      <div class="alert alert-error fade in">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%= f.input :username, :required => false, :placeholder => "Type username", :input_html => {:type => 'text', :size => 40, :maxlength => 30}, :autofocus => true %>
+    <%= f.input :password, :required => false, :placeholder => "Type Password", :input_html => {:size => 40, :maxlength => 30} %>
+    <div class="control-group">
+      <div class="controls">
+        <% if devise_mapping.rememberable? %>
+          <label class="checkbox">
+            <%= f.check_box :remember_me %> Remember me
+          </label>
+        <% end %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button class="btn btn-primary">Sign Me In <i class="icon-user icon-white"></i></button>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

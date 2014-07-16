@@ -1,0 +1,129 @@
+<div class="container span12">
+<div class="tabbable" style="margin-bottom: 18px;">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab"><img src="/assets/icon_transparent.png" border="0">  Transparent</a></li>
+    <li class=""><a href="#tab2" data-toggle="tab"><img src="/assets/icon_yellow_shield.png" border="0">  Badge</a></li>
+    <li class=""><a href="#tab3" data-toggle="tab"><img src="/assets/icon_overlay.png" border="0">  Overlay</a></li>
+    <li class=""><a href="#tab4" data-toggle="tab"><img src="/assets/icon_redirect.png" border="0">  Redirect</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <h3>Transparent Mode</h3>
+      <p>Transparent mode is not visible to the user. This mode is ideal for administrators who wish to gather information without altering corporate and intranet website design.</p>
+      <h4>Your Tracking Code</h4>
+      <%= render :partial => 'explanation' %>
+      <div class="container">
+        <pre align="left" class="span8">
+  &lt;!-- transparent mode --&gt;
+  &lt;script src="<%= BASE_URL %>/<%= @feed[:fid] %>/1/0/1/0/collect.js"&gt;
+  &lt;/script&gt;
+        </pre>
+      </div>
+      <p>To test out the functionality of this tracking code, use the test button</p>
+      <p><a class="btn btn-primary btn-large" target="new" onclick="alert('The transparent tracking code is not visible to the user on the page.')" >Launch</a></p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <h3>Badge Mode</h3>
+      <p>Badge mode produces an image that indicates whether the user's software is up-to-date.</p>
+      <h4>Your Tracking Code</h4>
+      <%= render :partial => 'explanation' %>
+      <div class="container">
+        <pre align="left" class="span8">
+  &lt;!-- badge mode --&gt;
+  &lt;div id="<%= DIV_CONTAINER_ID %>"/&gt;
+  &lt;script src="<%= BASE_URL %>/<%= @feed[:fid] %>/2/0/1/0/collect.js"&gt;
+  &lt;/script&gt;
+        </pre>
+      </div>
+      <div class="container">
+        <div class="span8">
+          <img src="/assets/badge_small_fail.png">
+          <img src="/assets/badge_small_pass.png">
+        </div>
+      </div>
+      <br/>
+      <p>To test out the functionality of this tracking code, use the test button.</p>
+      <p><button id="test-badge" class="btn btn-primary btn-large" >Test Badge</button></p>
+      <p><img id="badge" src="/assets/badge_small_pass.png"></p>
+      <script>
+        $('#badge').hide();
+        $('#test-badge').click(function () {
+          if( $('#badge').is(':visible') ) {
+            $('#badge').hide()
+            $('#test-badge').text('Test Badge')
+          }
+          else {
+            $('#badge').show();
+            $('#test-badge').text('Hide Badge')
+          }
+        });
+      </script>
+    </div>
+    <div class="tab-pane" id="tab4">
+      <h3>Redirect Mode</h3>
+      <p>Redirect mode sends the user to a URL designated by the administrator if out of date software is identified.</p>
+      <h4>Your Tracking Code</h4>
+      <%= render :partial => 'explanation' %>
+      <div class="container">
+        <pre align="left" class="span8">
+    &lt;!-- redirect mode --&gt;
+    &lt;script src="<%= BASE_URL %>/<%= @feed[:fid] %>/4/0/1/0/collect.js"&gt;
+    &lt;/script&gt;
+        </pre>
+      </div>
+      <div class="container">
+        <%= form_tag({}, :class => "well span4") do %>
+
+        <%= label_tag(:redirect, "Redirect URL") %>
+        <%= text_field_tag(:redirect, @redirect, :class => "span4") %>
+        <br>
+        <%= submit_tag("Set Redirect", :class => "btn btn-success btn-large") %>
+        <%= submit_tag("Clear Redirect", :class => "btn btn-danger btn-large", :confirm => 'Please confirm that you want to delete this redirect.') %>
+        <% end %>
+      </div>
+      <p>To test out the functionality of this tracking code, use the test button.</p>
+      <p><a class="btn btn-primary btn-large" target="new" href="<%= @redirect %>">Test</a></p>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <h3>Overlay Mode</h3>
+      <p>Overlay mode produces a translucent overlay which informs the user if out of date software is identified.</p>
+      <h4>Your Tracking Code</h4>
+      <%= render :partial => 'explanation' %>
+      <div class="container">
+        <pre align="left" class="span8">
+    &lt;!-- overlay mode --&gt;
+    &lt;script src="<%= BASE_URL %>/<%= @feed[:fid] %>/3/0/1/0/collect.js"&gt;
+    &lt;/script&gt;
+        </pre>
+      </div>
+<script>
+  function pluginScanOverlay(url){
+
+    // Load overlay stylesheet
+    var cobj  =  document.createElement("link")
+    var curl = "<%= BASE_URL %>/assets/pluginScanOverlay.css"
+    cobj.setAttribute("rel", "stylesheet")
+    cobj.setAttribute("type", "text/css")
+    cobj.setAttribute("href", curl)
+    document.body.appendChild(cobj);
+
+    // Create overlay content
+    var content = '<div><p><a onclick="pluginScanOverlay();">';
+    content += '<img src="<%= BASE_URL %>/assets/overlay_close.png" border="0">';
+    content += '</a><br><a href="<%= BASE_URL %>/scanme" target="new" border="0" onclick="pluginScanOverlay();">';
+    content += '<img src="<%= BASE_URL %>/assets/badge_overlay.png" border="0"></a></p></div>';
+
+    var overlayDiv = document.createElement("div");
+    overlayDiv.innerHTML = content;
+    overlayDiv.setAttribute("id","pluginScanOverlay");
+    document.body.appendChild(overlayDiv);
+
+    overlay = document.getElementById("pluginScanOverlay");
+    overlay.style.visibility = (overlay.style.visibility == "visible") ? "hidden" : "visible";
+  }
+</script>
+      <p>To test out the functionality of this tracking code, use the test button.</p>
+      <p><a id="show-overlay" class="btn btn-primary btn-large" onclick="pluginScanOverlay();" >Test</a></p>
+    </div>
+  </div>
+</div>

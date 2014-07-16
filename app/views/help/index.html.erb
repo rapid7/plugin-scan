@@ -1,0 +1,18 @@
+<%= javascript_include_tag "help/index" %>
+
+<div class="tabbable span12" style="margin-bottom: 0px;">
+  <ul class="nav nav-tabs" id='dashboard-nav-tab'>
+    <li class="active"><a href="#setup" data-toggle="tab" data-section='setup'><img src="/assets/icon_setup_16x16.png" border="0">  Setup</a></li>
+    <li><a href="#faqs" data-toggle="tab" data-section='map'><img src="/assets/icon_faq_16x16.png" border="0">  FAQs</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="setup">
+      <%= render 'setup' %>
+    </div>
+    <div class="tab-pane" id="faqs">
+      <%= render 'faq' %>
+    </div>
+  </div>
+</div>
+
+

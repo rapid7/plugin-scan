@@ -1,0 +1,67 @@
+{
+  "cve": [
+  {
+    "cve_id": "CVE/2013-0001",
+    "summary": "Quicktime 001",
+    "company": "apple",
+    "product": "quicktime",
+    "versions": [
+      "7.3.0.0",
+      "7.0",
+      "7.7.1"
+    ]
+  },
+  {
+    "cve_id": "CVE/2013-0003",
+    "summary": "Quicktime 003",
+    "company": "apple",
+    "product": "quicktime",
+    "versions": [
+      "7.3.0.0",
+      "7.0",
+      "7.7.1"
+    ]
+  },
+  {
+    "cve_id": "CVE/2013-0004",
+    "summary": "Quicktime 004",
+    "company": "apple",
+    "product": "quicktime",
+    "versions": [
+      "7.3.0.0",
+      "7.0",
+      "7.7.1"
+    ]
+  },
+  {
+    "cve_id": "CVE/2013-0002",
+    "summary": "Summary for RealPlayer",
+    "company": "realnetworks",
+    "product": "realplayer",
+    "versions": [
+      "8.0",                                                                                                                          
+      null,
+      "10.0 beta"
+    ]
+  }
+  ],
+  "metasploit": [
+    {
+      "fullname": "exploit/apple/quicktime",
+      "name": "Apple Quicktime Exploit",
+      "cve_id": "CVE/2013-0001"
+    },
+    {
+      "fullname": "exploit/realnetworks/realplayer",
+      "name": "Realnetworks RealPlayer Exploit",
+      "cve_id": "CVE/2013-0002"
+    }
+  ],
+  "exploit_db": [
+    {
+      "expdb_id": "12345",
+      "description": "Exploit DB Test Exploit",
+      "cve_id": "CVE/2013-0001"
+    }
+  ]
+}

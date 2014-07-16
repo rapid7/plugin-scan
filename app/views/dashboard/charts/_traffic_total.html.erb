@@ -1,0 +1,29 @@
+<p>Total traffic statistics for <%= product_name %>.</p>
+<div class="container span4">
+<%= javascript_tag do %>
+      function drawChart<%= @graph_id %>() {
+        var hits_data = google.visualization.arrayToDataTable([
+          ['Date', 'Hits', 'Exploitable'],
+          <%= @traffic %>
+        ]);
+        
+        var options = {
+          title: 'Traffic',
+          width: 700,
+          height: 425
+        }
+
+        var hits_chart = new google.visualization.LineChart(document.getElementById('hits_chart<%= @graph_id %>'));
+        hits_chart.draw(hits_data, options);
+      }
+<% end %>
+    <div id="hits_chart<%= @graph_id %>"></div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    drawChart<%= @graph_id %>();
+  });
+<% end %>
+
+
+</div>

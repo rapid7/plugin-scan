@@ -1,0 +1,39 @@
+<%
+#
+# XXX: Completely remove the navigation bar for now (using upper-right nav links instead)
+#
+if user_signed_in?
+%>
+
+<div id="navigation" class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+	    <% if user_signed_in? %>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="<%= @dashboard_nav %>"><a href="/dashboard"><img src="/assets/dashboard.png" border="0"> Dashboard</a></li>
+          <li class="<%= @tracking_nav %>"><a href="/tracking"><img src="/assets/icon_tracking.png" border="0"> Tracking</a></li>
+          <li class="<%= @scan_nav %>"><a href="/scanme"><img src="/assets/scan.png" border="0"> Scan</a></li>
+          <li class="<%= @help_nav %>"><a href="/help"><img src="/assets/icon_help_16x16.png" border="0"> Help</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li class="<%= @settings_nav %>"><%= link_to settings_path do %><i class="icon-wrench"></i> Account Settings<% end %></li>
+        </ul>
+      </div>
+      <% else %>
+      <div class="nav-collapse">
+       <div class="btn-group">
+         <%= link_to new_user_session_path, :class => 'btn' do %>Login <i class="icon-user"></i><% end %>
+       </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% end %>

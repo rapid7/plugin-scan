@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="tabbable span10" style="margin-bottom: 18px;"> 
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab"><img src="/assets/icon_account_16x16.png" border="0">  Account Information</a></li>
+      <li class=""><a href="#tab2" data-toggle="tab"><img src="/assets/icon_purge_16x16.png" border="0">  Purge Data</a></li>
+    </ul>
+   <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
+      <div class="tab-pane active" id="tab1">
+      </div>
+      <div class="tab-pane" id="tab2">
+        <div class="container span8">
+          <%= form_tag({}, :class => "span4") do %>
+            <%= submit_tag("Purge All Data", :class => "btn btn-danger btn-large span4", :confirm => 'You will lose all data. Are you sure you want to do this?') %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

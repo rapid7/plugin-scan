@@ -1,0 +1,33 @@
+<script src="<%= BASE_URL %>/<%= @feed %>/1/0/1/0/collect.js"></script>
+<div class="container">
+<div class="tabbable tabs-left" style="margin-bottom: 18px;">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab"><img src="/assets/icon_windows.png" border="0"> Windows</a></li>
+    <li class=""><a href="#tab2" data-toggle="tab"><img src="/assets/icon_apple.png" border="0"> Macintosh</a></li>
+    <li class=""><a href="#tab3" data-toggle="tab"><img src="/assets/icon_ubuntu.png" border="0"> Ubuntu</a></li>
+    <li class=""><a href="#tab4" data-toggle="tab"><img src="/assets/icon_configure.png" border="0"> Configure</a></li>
+  </ul>
+  <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
+    <div class="tab-pane active" id="tab1">
+      <div class="container">
+        <%= render 'windows_version_tab' %>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <div class="container">
+        <%= render 'macintosh_version_tab' %>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <div class="container">
+        <%= render 'ubuntu_version_tab' %>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab4">
+      <div class="container">
+        <%= render 'configure_version_tab' %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

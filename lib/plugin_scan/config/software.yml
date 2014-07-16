@@ -1,0 +1,450 @@
+---
+java6:
+  current_release: '1,6,0,35'
+  security_release: '1,6,0,35'
+linux:
+  chrome:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+    browser:
+      current_release: 23.0.1271.91
+      security_release: 23.0.1271.91
+  chromium:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 22.0.1229.94
+      security_release: 22.0.1229.94
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+  firefox:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: '17.0'
+      security_release: '17.0'
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+ubuntu:
+  chrome:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 23.0.1271.91
+      security_release: 23.0.1271.91
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+  chromium:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 22.0.1229.94
+      security_release: 22.0.1229.94
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+  firefox:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: '17.0'
+      security_release: '17.0'
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+macintosh:
+  chrome:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,1,0'
+      security_release: '7,7,1,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 23.0.1271.91
+      security_release: 23.0.1271.91
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+  firefox:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,1,0'
+      security_release: '7,7,1,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: '17.0'
+      security_release: '17.0'
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+  safari:
+    flash:
+      current_release: '11,3,300,262'
+      security_release: '11,3,300,262'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,1,0'
+      security_release: '7,7,1,0'
+    adobe_reader:
+      current_release: '10,1,3,0'
+      security_release: '10,1,3,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 536.26.17
+      security_release: 536.26.17
+    dvr:
+      current_release: ''
+      security_release: ''
+    vlc:
+      current_release: ''
+      security_release: ''
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: ''
+      security_release: ''
+windows:
+  chrome:
+    flash:
+      current_release: '11,5,31,2'
+      security_release: '11,5,31,2'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '11,0,0,0'
+      security_release: '11,0,0,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 20.0.1132.57
+      security_release: 20.0.1132.57
+    dvr:
+      current_release: 0,8,2,2
+      security_release: 0,8,2,2
+    vlc:
+      current_release: '2,0,2'
+      security_release: '2,0,2'
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: '11,6,8,638'
+      security_release: '11,6,8,638'
+  firefox:
+    flash:
+      current_release: '11,5,502,110'
+      security_release: '11,5,502,110'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '11,0,0,0'
+      security_release: '11,0,0,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: 13.0.1
+      security_release: 13.0.1
+    dvr:
+      current_release: 0,8,2,2
+      security_release: ''
+    vlc:
+      current_release: '2,0,2'
+      security_release: '2,0,2'
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: '11,6,8,638'
+      security_release: '11,6,8,638'
+  ie:
+    flash:
+      current_release: '11,5,502,110'
+      security_release: '11,5,502,110'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    adobe_reader:
+      current_release: '11,0,0,0'
+      security_release: '11,0,0,0'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: '9.0'
+      security_release: '9.0'
+    dvr:
+      current_release: 0,8,2,2
+      security_release: 0,8,2,2
+    vlc:
+      current_release: '2,0,2'
+      security_release: '2,0,2'
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: '11,6,8,638'
+      security_release: '11,6,8,638'
+  safari:
+    flash:
+      current_release: '11,5,502,110'
+      security_release: '11,5,502,110'
+    java7:
+      current_release: '1,7,0,9'
+      security_release: '1,7,0,9'
+    quicktime:
+      current_release: '7,7,2,0'
+      security_release: '7,7,2,0'
+    adobe_reader:
+      current_release: '11,0,0,0'
+      security_release: '11,0,0,0'
+    silverlight:
+      current_release: '5,1,10411,0'
+      security_release: '5,1,10411,0'
+    browser:
+      current_release: '11'
+      security_release: '11'
+    dvr:
+      current_release: 0,8,2,2
+      security_release: 0,8,2,2
+    vlc:
+      current_release: '2,0,2'
+      security_release: '2,0,2'
+    wmp:
+      current_release: ''
+      security_release: ''
+    realplayer:
+      current_release: '15,0,6,14'
+      security_release: '15,0,6,14'
+    shockwave:
+      current_release: '11,6,8,638'
+      security_release: '11,6,8,638'

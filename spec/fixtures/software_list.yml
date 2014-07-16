@@ -1,0 +1,51 @@
+---
+JAVA6: "1,6,0,45"
+JAVA6_s: "1,6,0,45"
+linux:
+  chrome:
+    ao_flash: "11,8,800,115"
+    ao_flash_s: "11,8,800,115"
+    ao_java: "1,7,0,25"
+    ao_java_s: "1,7,0,25"
+    ao_qt: ""
+    ao_qt_s: ""
+    ao_reader: "9,5,5"
+    ao_reader_s: "9,5,5"
+    ao_silver: ""
+    ao_silver_s: ""
+    ao_dvr: 0,9,0,2
+    ao_dvr_s: 0,9,0,2
+    ao_vlc: "2,0,8"
+    ao_vlc_s: "2,0,8"
+    ao_wmp: ""
+    ao_wmp_s: ""
+    ao_rp: "16,0,0,282"
+    ao_rp_s: "16,0,0,282"
+    ao_shock: ""
+    ao_shock_s: ""
+    br_v: "23,0,1271,95"
+    br_v_s: "23,0,1271,95"
+windows:
+  ie:
+    ao_flash: "11,8,800,94"
+    ao_flash_s: "11,8,800,94"
+    ao_java: "1,7,0,25"
+    ao_java_s: "1,7,0,25"
+    ao_reader: "11,0,0"
+    ao_reader_s: "11,0,0"
+    ao_qt: "7,7,4"
+    ao_qt_s: "7,7,4"
+    ao_silver: "5,1,20513,0"
+    ao_silver_s: "5,1,20513,0"
+    br_v: "10"
+    br_v_s: "6"
+    ao_dvr: 0,9,0,2
+    ao_dvr_s: 0,9,0,2
+    ao_vlc: "2,0,8"
+    ao_vlc_s: "2,0,8"
+    ao_wmp: ""
+    ao_wmp_s: ""
+    ao_rp: "16,0,0,282"
+    ao_rp_s: "16,0,0,282"
+    ao_shock: "12,0,3,133"
+    ao_shock_s: "12,0,3,133"

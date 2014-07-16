@@ -1,0 +1,82 @@
+<div class="container span12">
+  <div class="hero-unit span11">
+    <h1>Egress Port Check</h1>
+    <p>How many ways can an attacker steal data off of your network?</p>
+    <div id="scanner"></div>
+      <% if params[:scan] == 'true' %>
+        <style>
+          #progress {
+            margin-top: 30px;
+            width: 400px;
+          }
+        </style>
+        <div id="progress" class="container">
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <script>
+          var progress = setInterval(function() {
+          var $bar = $('.bar');
+          if ($bar.width()==400) {
+            clearInterval(progress);
+            $('.progress').removeClass('active');
+            /* $('#progress').append('<a href="./egress?results=true&ports=' + openPorts.toString()  + '" id="show-results" class="btn btn-primary btn-large" >Show Results</a>'); */
+            window.location = "./egress?report=true&ports=" + openPorts.toString();
+          } else {
+            $bar.width($bar.width()+4);
+          }
+            $bar.text($bar.width()/4 + "%");
+          }, 400);
+        </script>
+        <script type="text/javascript" src="/egressscanner"></script>
+      <% elsif params[:report] == 'true' %>
+        <p><a href="./egress?scan=true" class="btn btn-success btn-large span4" id="reScan">Scan Again</a></p>
+      <% else %>
+        <p><a href="./egress?scan=true" class="btn btn-primary btn-large span4" id="launchScan">Launch Scan</a></p>
+      <% end %>
+      <script>
+      </script>
+    </div>
+  </div>
+  <% if params[:report] == 'true' and not @ports.empty? %>
+    <div class="container span10">
+      <h3 class="span10">Open Ports</h3>
+      <table id="open-ports" class="span10">
+        <thead>
+          <tr>
+            <th>
+              Port
+            </th>
+            <th>
+              Protocol
+            </th>
+            <th>
+              Type
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+      <% @port_details.each do |port| %>
+          <tr>
+            <td>
+              <%= port[0] %>
+            </td>
+            <td>
+              <%= port[1] %>
+            </td>
+            <td>
+              <%= port[2] %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
+  <% end %>
+<script>
+$(document).ready(function(){
+  $('#open-ports').dataTable();
+});
+</script>
+

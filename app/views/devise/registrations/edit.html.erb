@@ -1,0 +1,63 @@
+<% @settings_nav = 'active' %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span6 offset3">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab"><img src="/assets/icon_account_16x16.png" border="0">  Account Information</a></li>
+        <li class=""><a href="#tab2" data-toggle="tab"><img src="/assets/icon_purge_16x16.png" border="0">  Purge Data</a></li>
+      </ul>
+      <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
+        <div class="tab-pane active" id="tab1">
+
+        <%= simple_form_for(resource,
+          :as => resource_name,
+          :url => registration_path(resource_name),
+          :html => { :method => :put, :class => 'form-horizontal well' }) do |f| %>
+
+        <fieldset>
+          <legend><%= resource_name.to_s.humanize %> Settings</legend>
+          <% if notification = f.error_notification %>
+            <div class="alert alert-error fade in">
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              <%= notification %>
+            </div>
+          <% end %>
+          <div class="control-group">
+            <label class="control-label">Password</label>
+            <div class="controls">
+              <p><span class="input-large uneditable-input">*******</span></p>
+              <%= link_to 'Change Password', change_password_path, :class => 'btn btn-primary' %><p>
+            </div>
+          </div>
+          <%= f.input :first_name, :input_html => {:class => 'input-large'} %>
+          <%= f.input :last_name, :input_html => {:class => 'input-large'} %>
+          <%= f.input :current_password, :required => true, :label => 'Current Password',
+              :input_html => {:class => 'input-large'} %>
+          <div class="control-group">
+            <div class="controls">
+              <%= f.button :submit, 'Save Changes', :class => 'btn btn-primary' %>
+              <%= link_to "Cancel Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+            </div>
+          </div>
+        </fieldset>
+        <% end %>
+        </div>
+
+        <div class="tab-pane" id="tab2">
+          <div class="container span12">
+            <h3>Purge Data</h3>
+            <div class="alert alert-error fade in">
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              Proceed with caution: The button below will remove all data associated with your account.
+            </div>
+            <%= form_tag({:controller => :configuration, :action => :purge_data}) do %>
+              <%= submit_tag("Purge All Data", :class => "btn btn-danger btn-large span4", :confirm => 'You will lose all data. Are you sure you want to do this?') %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

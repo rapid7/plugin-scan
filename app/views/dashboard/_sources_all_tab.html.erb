@@ -1,0 +1,34 @@
+<div class="tab-pane" id="sources-loaded-<%= @addon_id %>-tab">
+  <p>The table belows shows the top 100 source IPs reporting to your <%= product_name %> dashboard.</p>
+  <table class="table table-bordered table-condensed table-striped" id="sources-all-table">
+    <thead>
+      <tr>
+        <th>Source IP</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ips.keys.sort{|a,b| @ips[b] <=> @ips[a]}.each do |ip|
+        cnt = @ips[ip]
+      %>
+      <tr>
+        <td>
+          <%= ip %>
+        </td>
+        <td>
+          <%= cnt %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<script>
+ $(document).ready(function(){
+   $('#sources-all-table').dataTable( {
+     "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+      "sPaginationType": "bootstrap",
+      "aaSorting": [[ 1, "desc" ]]
+    } );
+ });
+</script>

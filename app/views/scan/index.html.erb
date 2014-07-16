@@ -1,0 +1,53 @@
+<style>
+  .table td {
+     line-height: 48px;
+     vertical-align: text-bottom;
+   }
+  #results {
+    color: black;
+  }
+  #warning {
+    color: red;
+  }
+</style>
+<div class="container span12" id="scan-results">
+  <% if request.headers['HTTP_USER_AGENT'].to_s =~ /iphone|ipad|ipod|android|blackberry|symbian/i %>
+  <h3> Your operating system is not yet supported </h3>
+  <% else %>
+  <div id="results"><img src="/assets/ajax_loader.gif" border="0"></div>
+  <% end %>
+</div>
+<script src="<%= BASE_URL %>/<%= default_feed_id %>/1/0/1/0/collect.js"></script>
+<script>
+function CollectParams(){
+      var params = "";
+      var ao = ["AdobeReader","DevalVR","Flash","Java","QuickTime","RealPlayer","Shockwave","SilverLight","WMP","VLC"];
+      var plugins = {
+        "AdobeReader":"reader",
+        "DevalVR":"dvr",
+        "Flash":"flash",
+        "Java":"java",
+        "QuickTime":"qt",
+        "RealPlayer":"rp",
+        "Shockwave":"shock",
+        "SilverLight":"silver",
+        "WMP":"wmp",
+        "VLC":"vlc"
+        }
+
+	for (var i in ao){
+		if (PluginScanHostDetails[ao[i]] != undefined){
+			params += plugins[ao[i]] + "=" + PluginScanHostDetails[ao[i]] + "&";
+		}
+	}
+	return params;
+}
+var params = CollectParams();
+
+$(document).ready(function(){
+
+  $.get('../scan/scan?' + params, function(data) {
+    $('#results').html(data);
+  });
+});
+</script>

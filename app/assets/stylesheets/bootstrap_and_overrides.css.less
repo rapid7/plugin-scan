@@ -1,0 +1,190 @@
+@import "twitter/bootstrap/bootstrap";
+body { 
+	padding-top: 60px;
+}
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: '/assets/glyphicons-halflings.png';
+@iconWhiteSpritePath: '/assets/glyphicons-halflings-white.png';
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
+//       have the proper paths. So for now we use the absolute path.
+//@fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
+//@fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
+//@fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
+//@fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
+
+// Font Awesome
+//@import "fontawesome";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+@sansFontFamily: "Trebuchet MS", Arial, Helvetica, sans-serif;
+@lightBlue: #0B72B6;
+@darkBlue: #074A76;
+
+@linkColor: @lightBlue;
+@linkColorHover: @darkBlue;
+
+@btnPrimaryBackground: @lightBlue;
+@btnPrimaryBackgroundHighlight: @btnPrimaryBackground;
+
+@navbarLinkColor: @darkBlue;
+@navbarLinkColorActive: @lightBlue;
+@navbarLinkColorHover: @lightBlue;
+
+@dropdownLinkColorHover: @lightBlue;
+@dropdownLinkBackgroundHover: @dropdownBackground;
+
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url(/assets/glyphicons-halflings.png);
+}
+
+.icon-white {
+  background-image: url(/assets/glyphicons-halflings-white.png);
+}
+
+#help .accordion-heading {
+  font-size: 18px;
+}
+
+.accordion-toggle:hover {
+  text-decoration: none;
+}
+
+.header {
+  border-top: solid 4px @lightBlue;
+  padding-top: 20px;
+  background: url(/assets/logo-pluginscan.png) left no-repeat;
+  height: 110px;
+}
+
+.header a {
+  color: @darkBlue;
+}
+
+.header a:hover {
+  text-decoration: none;
+}
+
+.header h1 {
+  padding-left: 3em;
+}
+
+.footer {
+  text-align: center;
+}
+
+.nav-tabs > li > a {
+  color: @darkBlue;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  color: @lightBlue;
+}
+
+.nav-pills > li > a {
+  color: @darkBlue;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color: @lightBlue;
+  background-color: #E5E5E5;
+}
+
+.no-space {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.right {
+  text-align: right;
+}
+
+.tabs-left {
+  text-align: left;
+}
+
+.text-large {
+  font-size: 18px;
+}
+
+h3.toc {
+  border-bottom: 1px solid #ccc;
+}
+
+#setup h3 {
+  font-weight: normal;
+}
+
+.lead-box {
+  padding: 10px;
+  padding-bottom: 20px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.lead-box h3 {
+  text-align: center;
+}
+
+.lead-box p {
+  height: 80px;
+}
+
+.large_button,
+.large_button:visited {
+    background: #08b5a8 url(/assets/blue_button_bg.gif) repeat-x top;
+    padding: 9px 30px;
+    font-size: 17px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 20px;
+    border: 0;
+}
+.large_button:hover {
+    background: #08b5a8 url(/assets/blue_button_bg.gif) repeat-x bottom;
+}
+
+.small_button:link,
+.small_button:visited {
+  padding: 7px 16px 5px 10px;
+  text-transform: uppercase;
+  color: #0197b8;
+  border: 1px solid #f1f1f1;
+  border-radius: 0 14px 14px 0;
+  background: #fff url(/assets/button_bg.gif) repeat-x bottom; 
+}
+.small_button:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.table td {
+  vertical-align: middle;
+}
+table.dataTable tr td.sorting_1 {
+  background-color: #fff !important;
+}
+.tab-content {
+  overflow: hidden;
+}
+
+#snapshot-table img {
+  margin-right: 10px;
+}

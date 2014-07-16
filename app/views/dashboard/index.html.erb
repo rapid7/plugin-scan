@@ -1,0 +1,32 @@
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<%= javascript_tag do %>
+  google.load("visualization", "1", {packages:["corechart", "geochart"]}); 
+<% end -%>
+<style>
+td {
+      text-align: center;
+}
+.table td {
+       text-align: center;
+}
+.table th {
+       text-align: center;
+}
+</style>
+<center>
+<div id="dashboard" class="container">
+
+<div class="tabbable" style="margin-bottom: 0px;">
+        <ul class="nav nav-tabs" id='dashboard-nav-tab'>
+          <li class="active"><a href="#statistics-tab" data-toggle="tab" data-section='statistics'><img src="/assets/icon_statistics_16x16.png" border="0"> Statistics</a></li>
+          <li class=""><a href="#sources-tab" data-toggle="tab" data-section='sources'><img src="/assets/icon_source_16x16.png" border="0"> Unique IPs</a></li>
+          <li class=""><a href="#websites-tab" data-toggle="tab" data-section='websites'><img src="/assets/icon_website_16x16.png" border="0"> Websites</a></li>
+        </ul>
+        <div class="tab-content">
+<!-- Statistics Tab -->
+<%= render 'statistics' %>
+<!-- Referer tab -->
+<%= render 'websites' %>
+<!-- Sources tab -->
+<%= render 'sources' %>
+</div>

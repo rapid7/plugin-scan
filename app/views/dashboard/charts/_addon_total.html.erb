@@ -1,0 +1,49 @@
+<p>Total count and share of <%= @addon_name %> versions detected by <%= product_name %>.</p>
+
+<div class="container span4">
+
+
+<%= javascript_tag do %>
+      function drawChart<%= @graph_id %>1() {
+        var addon_data = google.visualization.arrayToDataTable([
+          ['Software', 'Total'],
+          <%= @addon_data %>
+        ]);
+
+        var options = {
+          title: '<%= @addon_name %> Versions',
+          <%= @chart_dimensions %>
+       };
+
+        var addon_chart = new google.visualization.PieChart(document.getElementById('addon_chart_<%= @graph_id %>1'));
+        addon_chart.draw(addon_data, options);
+      }
+
+      function drawChart<%= @graph_id %>2() {
+        var addon_data = google.visualization.arrayToDataTable([
+          ['Software', 'Total'],
+          <%= @addon_exploitable %>
+        ]);
+
+        var options = {
+          title: '<%= @addon_name %> Exploitability',
+          <%= @chart_dimensions %>
+       };
+
+        var addon_chart = new google.visualization.PieChart(document.getElementById('addon_chart_<%= @graph_id %>2'));
+        addon_chart.draw(addon_data, options);
+      }
+
+<% end %>
+
+<div id="addon_chart_<%= @graph_id %>1"></div>
+<div id="addon_chart_<%= @graph_id %>2"></div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {;
+    drawChart<%= @graph_id %>1();
+    drawChart<%= @graph_id %>2();
+  });
+<% end %>
+
+</div>

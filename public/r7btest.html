@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script language="javascript" src="r7btest.js">
+</script>
+
+<script language="javascript">
+	var r7b_main;
+
+	function go() {
+		r7bmain = R7BTest("r7bmain", "//192.168.0.4/bt/", 10000);
+		r7bmain.log_container = "log";
+		r7bmain.runTest("plugins", "ua12345", testHandler);
+	}
+
+	function testHandler(testName, uid, action, data) {
+		switch(action) {
+		case "timeout":
+			// This test timed out and will need to be handled manually
+			break;
+		case "progress":
+			// This test has made progress
+			break;
+		case "result":
+			// This test succeeded and returned data
+			for (var i in data.results) {
+				addResult(testName, uid, i, data.results[i]);
+			}
+			break;
+		}
+	}
+
+	function addResult(testName, uid, testId, testResult) {
+		alert( testName + ":" + uid + " - " + testId + " = " + testResult);
+	}
+
+</script>
+
+</head>
+<body onload="go()">
+
+<div id="results">
+</div>
+
+<hr/>
+<div id="log">
+</div>
+<hr/>
+
+</body>
+</html>

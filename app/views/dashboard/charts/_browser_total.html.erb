@@ -1,0 +1,48 @@
+<p>Total count and share of browsers detected by <%= product_name %>.</p>
+<div class="container span4">
+
+<%= javascript_tag do %>
+
+      function drawChartBrowser1() {
+        var browser_bar_data = google.visualization.arrayToDataTable([
+          ['Browser', 'Count'],
+          <%= @browsers %>
+        ]);
+
+        var browser_bar_options = {
+          title: 'Web Browsers',
+          <%= @chart_dimensions %>
+        };
+
+        var browser_bar_chart = new google.visualization.BarChart(document.getElementById('browser_bar_div'));
+        browser_bar_chart.draw(browser_bar_data, browser_bar_options);
+      }
+
+      function drawChartBrowser2() {
+        var browser_pie_data = google.visualization.arrayToDataTable([
+          ['Browser', 'Count'],
+          <%= @browsers %>
+        ]);
+
+        var browser_pie_options = {
+          title: 'Web Browsers Share',
+                 <%= @chart_dimensions %>
+        };
+
+        var browser_pie_chart = new google.visualization.PieChart(document.getElementById('browser_pie_chart'));
+        browser_pie_chart.draw(browser_pie_data, browser_pie_options);
+
+      }
+<% end %>
+
+<div id="browser_bar_div"></div>
+<div id="browser_pie_chart"></div>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    drawChartBrowser1();
+    drawChartBrowser2();
+  });
+<% end %>
+
+</div>

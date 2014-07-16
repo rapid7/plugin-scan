@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <%= render 'layouts/html_head' %>
+  <body>
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <div class="row">
+      <p class="lead">Browser plugins represent a major threat to all internet users. Out-of-date plugins on end-user devices open the door to a full-blown data breach for your organization. Patching browser plugins is essential to protect against this threat, but knowing if your end-users are doing so, especially with the growing prevalence of BYOD and tele-commuting, is challenging.  Identify and notify your at-risk users now.</p>
+    </div>
+    <div class="row-fluid">
+      <div class="span4 offset4">
+        <div class="pagination-centered">
+          <%= link_to 'Scan My Browser', '/scanme', :class => 'btn btn-large btn-block btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <br/><br/><br/>
+      <div class="span8 no-space">
+        <p><i class="icon-chevron-right"></i> <%= product_name %> is quick and easy to deploy because it does not require any client-side software or user interaction.</p>
+        <p><i class="icon-chevron-right"></i> <%= product_name %> does not track personal information and only enumerates browser vulnerabilities.</p>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  </body>
+</html>

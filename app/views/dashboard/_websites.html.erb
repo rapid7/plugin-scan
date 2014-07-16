@@ -1,0 +1,36 @@
+<div class="tab-pane" id="websites-tab">
+  <div class="tabbable tabs-left" style="margin-bottom: 18px;">
+    <ul class="nav nav-tabs" id="websites-nav-tab">
+      <li class=""><a href="#websites-all-tab" data-toggle="tab"><img src="/assets/icon_table_32x32.png" border="0"> Summary</a></li>
+    </ul>
+    <div class="tab-content">
+<!-- All Websites Tab -->
+      <div class="tab-pane" id="websites-all-tab">
+ 	    <%= render :partial => 'dashboard/charts/loading' %>
+      </div>
+<!-- End of Content -->
+    </div>
+  </div>
+ </div>
+
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+
+    $('#websites-nav-tab a[data-toggle="tab"]').on('show', function (e) {
+      var target = e.target.getAttribute("href");
+      var target_path = '<%= @presenter.graph_prefix_uri %>' + target.substring(1);
+      $(target).load(target_path);
+    });
+
+    $('#websites-nav-tab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+
+   // Load the first tab automatically when the top-level nav is switched
+   $('#dashboard-nav-tab a[data-section="websites"]').click(function (e) {
+      $('#websites-nav-tab a:first').tab('show');
+    })
+  });
+<% end %>

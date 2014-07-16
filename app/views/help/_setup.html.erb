@@ -1,0 +1,106 @@
+<div class="container">
+  <h1>Getting Started with <%= product_name %></h1>
+  <div class="well well-small">
+    <h3 class="toc">Table of Contents</h3>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#sign_up">Sign up</a></li>
+      <li><a href="#tracking">Tracking Codes</a></li>
+      <li><a href="#using">Using <%= product_name %></a></li>
+    </ol>
+  </div>
+
+  <div class="container">
+    <h2 id="overview">Overview</h2>
+    <p><%= product_name %> is an excellent way for website administrators of organizations to understand the risk exposure of their users and website visitors.  By placing a tracking code provided by <%= product_name %> on your Intranet, wiki, help desk or web pages, you can understand the browser-based risks of your employees.  Administrator rights are required to use the tracking code feature of <%= product_name %>.</p>
+  </div>
+
+  <div class="container">
+    <h2 id="sign_up">Sign up</h2>
+    <p><a href="/users/sign_up">Registration</a> is free and your tracking code will be available upon login.  You will need administrator rights to place the <%= product_name %> tracking code on your web pages.</p>
+  </div>
+
+  <div class="container">
+    <h2 id="tracking">Tracking Codes</h2>
+    <h3>Choosing a Tracking Code</h3>
+    <dl class="dl-horizontal">
+      <dt>Transparent Mode</dt>
+      <dd>Transparent tracking mode enumerates browser-based risks when a webpage is loaded.  This mode is ideal for administrators who wish to gather information without altering corporate and intranet website design.</dd>
+      <dt>Badge Mode</dt>
+      <dd>Badge tracking mode enumerates browser-based risks and produces an image that indicates whether the user's software is out of date.</dd>
+      <dt>Overlay Mode</dt>
+      <dd>Overlay tracking mode enumerates browser-based risks and produces a full browser window translucent overlay which informs the user if out of date software is identified.</dd>
+      <dt>Redirect Mode</dt>
+      <dd>Redirect tracking mode enumerates browser-based risks and redirects the user's browser to a URL designated by the administrator if out of date software is identified.</dd>
+    <dl>
+
+    <h3>Retrieving Your Tracking Code</h3>
+    <ol>
+      <li>Click <a href="<%= BASE_URL %>/tracking">Tracking</a> on the navigation bar.</li>
+      <li>Your tracking code is an HTML snippet that allows your webpage to talk securely to the <%= product_name %> application using a unique tracking code ID. There are a few tracking code choices:</li>
+    </ol>
+    <div class="container">
+      <pre class="span8">
+  &lt;!-- transparent mode --&gt;
+  &lt;script src="//example.com/EM-555555555/1/0/1/0/collect.js"&gt;
+  &lt;/script&gt;</pre>
+    </div>
+
+    <h3>Deploying Your Tracking Code</h3>
+    <ol>
+      <li>
+        <h4>HTML page</h4>
+        <p>If you are able to edit the HTML on a website you can install the tracking code.  Website administrators can add their tracking code to the bottom of their HTML source code before the <code>&lt;/html&gt;</code> closing tag.</p>
+        <div class="container">
+          <pre class="span8">
+  &lt;/body&gt;
+  &lt;!-- transparent mode --&gt;
+  &lt;script src="//example.com/EM-555555555/1/0/1/0/collect.js"&gt;
+  &lt;/script&gt;
+&lt;/html&gt;</pre>
+        </div>
+      </li>
+      <li>
+        <h4>WordPress</h4>
+        <p>Javascript can be used in WordPress template files and posts but a WordPress plugin is required.  The document entitled "<a href="http://codex.wordpress.org/Using_Javascript">Using Javascript</a>" on the WordPress site outlines the process.  After the plugin is setup, copy the appropriate tracking code script from <%= product_name %> and add it to your template or post.</p>
+      </li>
+      <li>
+        <h4>SharePoint</h4>
+        <p>In order to add Javascript to a SharePoint page, you'll need to use a Content Web Editor Part to add your custom tracking code script.  The document entitled "<a href="http://office.microsoft.com/en-us/sharepoint-foundation-help/using-the-content-editor-web-part-HA101794745.aspx">Using the Content Editor Web Part</a>" outlines the steps to use a content editor and adding a web part to a SharePoint page.</p>
+        </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h2 id="using">Using <%= product_name %></h2>
+    
+    <h3>Viewing Analytics</h3>
+    <ol>
+      <li>To view your browser analytics click <a href="/dashboard">Dashboard</a> on the navigation bar.</li>
+      <li>The <%= product_name %> dashboard allows you to view version information related to webpage visitors.  The following is a summary of the analytics available:</li>
+    </ol>
+    <dl class="dl-horizontal">
+      <dt>Traffic Analysis</dt>
+      <dd>Shows the total traffic visits over a thirty day period.  It counts each visit as a hit, and each visit as exploitable if there were out of data plugins.</dd>
+      <dt>Operating Systems</dt>
+      <dd>Shows the different OSes that were used with each visit.</dd>
+      <dt>Web Browsers</dt>
+      <dd>Shows the different browsers that were used with each visit.</dd>
+      <dt>Browser Addons</dt>
+      <dd>Shows the different browser plugins that were detect with each visit.</dd>
+    </dl>
+
+    <h3>Scanning</h3>
+    <ol>
+      <li>Click <a href="/scanme">Scan</a> on the navigation bar to launch a quick scan.</li>
+      <li>The <%= product_name %> ScanMe page allows visitors to view and assess their own browser and plugin security posture.</li>
+    </ol>
+    <p><img src="/assets/scanme_result.png" border="0"></p>
+
+    <h3>Purging Data</h3>
+    <ol>
+      <li>In order to delete all of your data, click <a href="/settings">Account Settings</a> on the navigation bar.</li>
+      <li>Then click the Purge Data tab.  <strong><span class="text-error">(This will delete your data and it will not be recoverable.)</span></strong></li>
+    </ol>
+  </div>
+</div>
