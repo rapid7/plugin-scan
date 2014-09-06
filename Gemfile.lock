@@ -205,10 +205,10 @@ DEPENDENCIES
   jquery-datatables-rails (~> 1.11.2)
   jquery-rails (~> 3.0.4)
   less-rails-bootstrap
-  mongoid (= 3.1.6)
-  moped (= 1.5.2)
+  mongoid (~> 3.1.6)
+  moped (~> 1.5.2)
   pry
-  rails (= 3.2.19)
+  rails (~> 3.2.19)
   rspec-rails (~> 2.14.2)
   sanitize
   sass-rails (~> 3.2.6)

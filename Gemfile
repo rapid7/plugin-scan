@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.19'
+gem 'rails', '~> 3.2.19'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.6'
@@ -27,8 +27,8 @@ end
 gem 'twitter-bootstrap-rails'
 gem 'less-rails-bootstrap'
 
-gem 'moped', '1.5.2'
-gem "mongoid", '3.1.6'
+gem 'moped', '~> 1.5.2'
+gem "mongoid", '~> 3.1.6'
 
 gem 'thin'
 gem 'jquery-rails', '~> 3.0.4'
