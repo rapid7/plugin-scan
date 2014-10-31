@@ -31,11 +31,11 @@ gem 'moped', '~> 1.5.2'
 gem "mongoid", '~> 3.1.6'
 
 gem 'thin'
-gem 'jquery-rails', '~> 3.0.4'
-gem 'jquery-datatables-rails', '~> 1.11.2'
-gem "bson_ext", ">= 1.6.4"
-gem "devise", '~> 3.2.4'
+gem 'jquery-rails', '~> 3.1.2'
+gem 'jquery-datatables-rails', '~> 3.0.0'
+gem "bson_ext", ">= 1.11.0"
+gem "devise", '~> 3.4.1'
 gem "simple_form", '~> 2.1.0'
 gem "therubyracer", :group => :assets, :platform => :ruby
-gem "geoip"
+gem "geoip", '~> 1.4.0'
 gem "sanitize"
