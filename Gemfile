@@ -24,7 +24,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.4.0"
 end
 
-gem "twitter-bootstrap-rails", :git => 'https://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "twitter-bootstrap-rails", "~> 2.2.8", "<3.0"
 gem 'less-rails-bootstrap'
 
 gem 'moped', '~> 1.5.2'
