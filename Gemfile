@@ -32,7 +32,7 @@ gem "mongoid", '~> 3.1.6'
 
 gem 'thin'
 gem 'jquery-rails', '~> 3.1.2'
-gem 'jquery-datatables-rails', '~> 3.0.0'
+gem 'jquery-datatables-rails', '~> 3.1.1'
 gem "bson_ext", ">= 1.11.0"
 gem "devise", '~> 3.4.1'
 gem "simple_form", '~> 2.1.0'
